@@ -13,5 +13,6 @@
     "eleventy-plugin-vento": "npm:eleventy-plugin-vento@^5.2.1",
     "purecss": "npm:purecss@^3.0.0",
     "sass": "npm:sass@^1.97.1"
-  }
+  },
+  "lock":false
 }
