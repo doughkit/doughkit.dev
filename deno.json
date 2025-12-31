@@ -13,8 +13,5 @@
     "eleventy-plugin-vento": "npm:eleventy-plugin-vento@^5.2.1",
     "purecss": "npm:purecss@^3.0.0",
     "sass": "npm:sass@^1.97.1"
-  },
-  "nodeModulesDir": "auto",
-  "allowScripts": ["npm:@parcel/watcher@2.5.1", "npm:less@4.5.1"],
-  "lock":false
+  }
 }
