@@ -1,0 +1,24 @@
+{{ set _title = title || "doughkit.dev" }}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ if description }}
+      <meta name="description" content="{{ description }}">
+      <meta property="og:description" content="{{ description }}">
+    {{ /if }}
+    <meta property="og:url" content="{{ domain }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ _title }}">
+    <meta name="keywords" content="doughkit, doughkit.dev, doughkitdev, art, game dev, gamedev, blog, portfolio">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/{{ favicon || "default" }}.svg" />
+    <title>{{ _title }}</title>
+    <link rel="stylesheet" href="/bundle.css">
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

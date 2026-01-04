@@ -1,0 +1,46 @@
+@use "sass:string";
+$widths: (
+  "any": false,
+  "sm": 35.5em,
+  "md": 48em,
+  "lg": 64em,
+  "xl": 80em,
+);
+
+@mixin flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.container {
+  @include flex-container;
+}
+
+@mixin breakpoint($lbl, $div) {
+  @for $i from 1 through ($div - 1) {
+    .u-#{$lbl}-#{$i}-#{$div} {
+      $w: (100% * calc($i / $div));
+      flex: 0 0 $w;
+      max-width: $w;
+    }
+  }
+
+  // produces redundant code; however, it gets minified away, so we dont care
+  .u-#{$lbl}-full {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@each $label, $units in $widths {
+  @each $div in (5, 12) {
+    @if ($units != false) {
+      @media screen and (min-width: $units) {
+        @include breakpoint($label, $div);
+      }
+    } @else {
+      @include breakpoint($label, $div);
+    }
+  }
+}
