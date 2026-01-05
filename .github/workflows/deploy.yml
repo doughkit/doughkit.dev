@@ -30,6 +30,11 @@ jobs:
       - name: Deno Build
         run: deno task build
 
+      - name: Optimize Build
+        run: |
+          deno task purge
+          deno task minify
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
