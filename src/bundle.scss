@@ -1,6 +1,4 @@
 @use "sass:color";
 
-@use "../_includes/scss/_normalize";
+@use "../node_modules/bulma/bulma.scss";
 @use "../_includes/scss/_typography";
-@use "../_includes/scss/_grid_responsive";
-
