@@ -1,4 +1,13 @@
-@use "sass:color";
+@use "../_includes/colors" as c;
 
-@use "../node_modules/bulma/bulma.scss";
-@use "../_includes/scss/_typography";
+@use "../node_modules/bulma/sass/utilities" with (
+    $family-primary: '"JetBrains Mono",monospace',
+    $primary: c.$main,
+);
+
+@forward "../node_modules/bulma/sass/base";
+@forward "../node_modules/bulma/sass/components";
+@forward "../node_modules/bulma/sass/elements";
+@forward "../node_modules/bulma/sass/layout";
+@forward "../node_modules/bulma/sass/helpers";
+@forward "../node_modules/bulma/sass/themes";

@@ -1,0 +1,20 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+
+// list of oklch lightness values that have good contrast
+$_ratios: (
+    95% 45%,
+    85% 40%,
+    70% 20%,
+    60% 0%
+);
+
+@function lightness($color, $l) {
+    @return color.to-space(color.change($color, $lightness: $l, $space: oklch), color.space($color));
+}
+
+$main: #a6174f;
+$accent: #1c604b;
+$dark: #1d1f2e; // light mode text
+$beige: #fec3a8; // dark mode text
