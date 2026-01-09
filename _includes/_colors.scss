@@ -1,20 +1,24 @@
 @use "sass:color";
-@use "sass:list";
-@use "sass:map";
+// naming convention inspired by catppuccin
+$crust: #1b1020;
+$mantle: #261a2c;
+$base: #322439;
+$overlay: #44334c;
+$subtext: #a18caa;
+$text: #eee;
 
-// list of oklch lightness values that have good contrast
-$_ratios: (
-    95% 45%,
-    85% 40%,
-    70% 20%,
-    60% 0%
-);
+$accent: #e889ff;
+$red: #f72d66;
+$yellow: #fffc6a;
+$blue: #7993f8;
+$green: #81d6ad;
 
-@function lightness($color, $l) {
-    @return color.to-space(color.change($color, $lightness: $l, $space: oklch), color.space($color));
+@function dark($c) {
+    @return color.scale(darken($c, 15%), $saturation: -30%);
 }
 
-$main: #a6174f;
-$accent: #1c604b;
-$dark: #1d1f2e; // light mode text
-$beige: #fec3a8; // dark mode text
+$accent-dark: dark($accent);
+$red-dark: dark($red);
+$yellow-dark: dark($yellow);
+$blue-dark: dark($blue);
+$green-dark: dark($green);

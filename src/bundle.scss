@@ -1,8 +1,8 @@
-@use "../_includes/colors" as c;
+@use "../_includes/_colors.scss" as c;
 
 @use "../node_modules/bulma/sass/utilities" with (
     $family-primary: '"JetBrains Mono",monospace',
-    $primary: c.$main,
+    $primary: c.$accent,
 );
 
 @forward "../node_modules/bulma/sass/base";
