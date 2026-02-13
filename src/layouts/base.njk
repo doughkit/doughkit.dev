@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if description %}
+  <meta name="description" content="{{ description }}">
+  <meta property="og:description" content="{{ description }}">
+  {% else %}
+  {% endif %}
+  <meta property="og:url" content="https://doughkit.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }}">
+  <meta name="keywords" content="doughkit, doughkit.dev, doughkitdev, art, game dev, gamedev, blog, portfolio">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="d-body">
+    {% include "navbar.njk" %}
+
+    {% if has_hero %}
+      {% include "hero.njk" %}
+    {% endif %}
+
+    <main class="d-main">
+      {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
+    <div class="svg-bundle" style="display: none" aria-hidden="true">
+      {% getBundle "fontawesome" %}
+    </div>
+  </div>
+</body>
+
+</html>

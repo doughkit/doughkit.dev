@@ -1,0 +1,45 @@
+# Sitemap at the footer
+socials:
+  - title: Bluesky
+    href: https://bsky.app/profile/doughkit.dev
+    icon: fab:bluesky
+
+  - title: Github
+    href: https://github.com/doughkit
+    icon: fab:github-alt
+    
+  - title: Email
+    href: mailto:contact@doughkit.dev
+    icon: fas:envelope
+
+map:
+  - title: TODO
+    list:
+      - href:
+        title: hi
+      - href:
+        title:
+      - href:
+        title:
+      - href:
+        title:
+  - title: TODO
+    list:
+      - href:
+        title:
+      - href:
+        title:
+      - href:
+        title:
+      - href:
+        title:
+  - title: TODO
+    list:
+      - href:
+        title:
+      - href:
+        title:
+      - href:
+        title:
+      - href:
+        title:

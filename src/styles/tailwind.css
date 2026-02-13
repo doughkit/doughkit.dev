@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'RockoUltra';
+  src:url('/assets/fonts/RockoUltraFLF.woff2') format('woff2'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rocko';
+  src:url('/assets/fonts/RockoFLF.woff2') format('woff2'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+@theme { 
+  --font-sans: "Rocko";
+  --font-mono: "JetBrains Mono";
+}
+
+@plugin "daisyui" {
+   themes: light, yay --default;
+}
+@plugin "daisyui/theme" {
+  name: "yay";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(21.5% 0.027 3.815);
+  --color-base-200: oklch(28.2% 0.031 2.432);
+  --color-base-300: oklch(35% 0.041 3.907);
+  --color-base-content: oklch(98% 0.028 342.258);
+
+  --color-primary: oklch(62.8% 0.206 7.400);
+  --color-primary-content: oklch(98% 0.031 120.757);
+
+  --color-secondary: oklch(55% 0.057 39.200);
+  --color-secondary-content: oklch(98% 0.002 247.839);
+
+  --color-accent: oklch(69% 0.170 157.300);
+  --color-accent-content: oklch(97% 0.021 166.113);
+
+  --color-neutral: oklch(52% 0.177 3.958);
+  --color-neutral-content: oklch(97% 0.014 343.198);
+
+  --color-info: oklch(58% 0.158 241.966);
+  --color-info-content: oklch(97% 0.013 236.62);
+
+  --color-success: oklch(60% 0.118 184.704);
+  --color-success-content: oklch(98% 0.014 180.72);
+
+  --color-warning: oklch(64% 0.222 86.900);
+  --color-warning-content: oklch(98% 0.016 73.684);
+
+  --color-error: oklch(59% 0.249 18.700);
+  --color-error-content: oklch(97% 0.014 343.198);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@source "custom.css";
+
+.footericons a {
+  display: inline-block;
+}
+
+:root {
+  letter-spacing: 0.07ch;
+}
+
+code {letter-spacing: initial;}
+
+.d-body {@apply max-w-5xl m-auto flex flex-col gap-4 min-h-screen p-6 select-none;}
+
+.d-hero {
+  @apply bg-primary border-4 text-primary-content rounded-box px-8 py-14 relative overflow-clip mb-2;
+  box-shadow: 0 8px var(--color-info);
+}
+
+.d-main {
+  @apply flex-1 flex flex-col gap-4;
+  & > section {
+    @apply rounded-box bg-base-200 p-6;
+  }
+}
+
+
+.titling {
+  font-family: "RockoUltra";
+  letter-spacing: 0.05ch;
+  font-weight: normal;
+}
