@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'RockoUltra';
+  src:url('/assets/fonts/RockoUltraFLF.woff2') format('woff2'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rocko';
+  src:url('/assets/fonts/RockoFLF.woff2') format('woff2'); 
+  font-weight: normal;
+  font-style: normal;
+}

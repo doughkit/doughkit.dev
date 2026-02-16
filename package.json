@@ -4,30 +4,31 @@
   "description": "Blog, portfolio, and personal site for doughkit",
   "main": "index.js",
   "repository": "https://github.com/doughkit/doughkit.dev.git",
-  "author": "doughkit <contact@doughkit.dev>",
+  "author": "doughkit <doughkit@proton.me>",
   "license": "MIT",
   "private": false,
   "type": "module",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/font-awesome": "^1.0.1",
-    "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.3.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@iconify-json/ph": "^1.2.2",
-    "@tailwindcss/cli": "^4.1.18",
-    "@tailwindcss/typography": "^0.5.19",
-    "daisyui": "^5.5.14",
+    "concurrently": "^9.2.1",
     "eleventy-plugin-phosphoricons": "^2.0.0",
     "eleventy-plugin-purgecss": "^0.5.0",
-    "eleventy-plugin-vento": "^5.3.0",
     "html-minifier-next": "^4.17.1",
     "js-yaml": "^4.1.1",
-    "pug": "^3.0.3",
     "purgecss": "^7.0.2",
-    "tailwindcss": "^4.1.18"
+    "stylus": "^0.64.0",
+    "yarn": "^1.22.22"
   },
   "scripts": {
-    "tail": "yarn exec tailwindcss -- -i src/styles/tailwind.css -c src/styles/tailwind.config.js -o _site/style.css -m",
-    "build": "NODE_ENV=production yarn exec eleventy & yarn tail",
-    "serve": "yarn exec eleventy -- --serve & yarn tail --watch --poll"
+    "build:stylus": "npx stylus --compress ./src/styles/ --out ./_site/css/",
+    "watch:stylus": "npx stylus --watch ./src/styles/ --out ./_site/css/",
+    "build:11ty": "eleventy",
+    "watch:11ty": "eleventy --serve",
+    "build": "npm run build:stylus && npm run build:11ty",
+    "serve": "npx concurrently \"yarn watch:stylus\" \"yarn watch:11ty\""
   }
 }

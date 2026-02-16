@@ -1,0 +1,15 @@
+- like all of the css
+- set up layouts
+---
+- business
+    - portfolio
+    - email
+    - experience / resume?
+- casual, recreational
+    - blog
+    - socials
+    - art
+    - game
+---
+- who are you info
+- what do you do info

@@ -1,0 +1,46 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta property="og:url" content="{{ page.url | prepend: "https://doughkit.dev" }}">
+  <meta property="og:type" content="website">
+
+  {% # discord embed %}
+  {%- unless discord == false or discord == nil %}
+    {%- assign sitename = "doughkit.dev%%" | append: discord.suffix | split: "%%" | compact | join: " — " %}
+    <meta property="og:site_name" content="{{ sitename }}">
+    <meta property="og:title" content="{{ discord.title | default: page.title }}">
+    <meta property="og:description" content="{{ discord.desc | default: page.description }}">
+    {%- if discord.image or discord.image_large %}
+      <meta property="og:image" content="{{ discord.image | default: discord.image_large }}">
+      {%- if discord.image_large %}
+        <meta name="twitter:card" content="summary_large_image">
+      {%- endif %}
+    {%- endif %}
+    <meta name="theme-color" content="#ee6699">
+  {%- endunless %}
+  
+  {%- if page.description %}
+    <meta name="description" content="{{ page.description }}">
+  {%- endif %}
+  
+  <meta name="keywords" content="doughkit, doughkit.dev, doughkitdev, art, game dev, gamedev, blog, portfolio">
+  <link rel="stylesheet" type="text/css" href="/bundle.css">
+  
+  {%- assign title = "%%doughkit.dev" | prepend: page.title | split: "%%" | compact | join: " — " %}
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <div class="main">
+    {{ content }}
+  </div>
+</body>
+
+</html>
